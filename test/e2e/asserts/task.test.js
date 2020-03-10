@@ -1,4 +1,4 @@
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-core');
 const loginPage = require('../pages/LoginPage');
 const dashboardPage = require('../pages/DashboardPage');
 const boardPage = require('../pages/BoardPage');
@@ -15,7 +15,8 @@ describe('The user creates a task', async () => {
       {
         headless: false,
         args: ['--start-fullscreen'],
-        slowMo: 40
+        slowMo: 40,
+        executablePath: 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe'
       }
     );
     page = await browser.newPage();
